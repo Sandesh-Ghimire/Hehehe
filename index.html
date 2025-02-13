@@ -93,31 +93,32 @@
 /*       display: none; */
     }
 
-        body::before {
-      content: "";
-      position: absolute;
-      top: 10%;
-      left: 5%;
-      width: 200px;
-      height: 200px;
-      background: url('this.png')  no-repeat center/cover;
-      transform: rotate(155deg);
-      opacity: 0.5;
-      z-index: -1; /* Ensure it stays behind content */
-    }
+      body::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 150px; /* Decrease the size */
+  height: 150px; /* Decrease the size */
+  background: url('/this.png') no-repeat center/cover;
+  transform: rotate(155deg);
+  opacity: 0.5;
+  z-index: -1;
+}
 
-    body::after {
-      content: "";
-      position: absolute;
-      bottom: 15%;
-      right: 10%;
-      width: 200px;
-      height: 200px;
-      background: url('this.png') no-repeat center/cover;
-      transform: rotate(-15deg);
-      opacity: 0.5;
-      z-index: -1;
-    }
+body::after {
+  content: "";
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  width: 150px; /* Decrease the size */
+  height: 150px; /* Decrease the size */
+  background: url('/this.png') no-repeat center/cover;
+  transform: rotate(-15deg);
+  opacity: 0.5;
+  z-index: -1;
+}
+
 
     @media (max-width: 768px) {
       body {
@@ -140,6 +141,20 @@
         width: 275px;
         height: 500px;
       }
+       body::before {
+    width: 100px; /* Even smaller size for mobile */
+    height: 100px;
+    top: 5%; /* Adjust position */
+    left: 10%; /* Adjust position */
+  }
+
+  body::after {
+    width: 100px; /* Smaller size for mobile */
+    height: 100px;
+    bottom: 5%; /* Adjust position */
+    right: 5%; /* Adjust position */
+  }
+}
     }
   </style>
 </head>
