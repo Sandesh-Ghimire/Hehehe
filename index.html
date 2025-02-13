@@ -53,7 +53,13 @@
       font-weight: bold;
       display: none;
     }
-
+   #message2 {
+      margin-top: 25px;
+      font-size: 18px;
+      color: #ff3333;
+      font-weight: bold;
+      display: none;
+    }
     #solve-button, #try-again-button {
       margin-top: 20px;
       padding: 10px 20px;
@@ -103,7 +109,7 @@
   <h1 id="title">Unlock My Heart ❤️</h1>
   <div id="puzzle-container"></div>
   <div id="message">Congratulations! You've unlocked my heart! ❤️</div>
-  <div id="message">Happy Valentine's Day Penguin🐧❤️</div>
+  <div id="message2">Happy Valentine's Day Penguin🐧❤️</div>
   
   <button id="solve-button">Solve Puzzle</button>
 
@@ -178,6 +184,7 @@
       const isSolved = numbers.every((num, index) => num === (index + 1) || num === null);
       if (isSolved) {
         document.getElementById("message").style.display = "block";
+        document.getElementById("message2").style.display = "block";
         document.getElementById("image-container").style.display = "block"; // Show image
         document.getElementById("puzzle-container").style.display = "none"; // Hide puzzle
         document.getElementById("title").style.display = "none"; // Hide title
@@ -200,6 +207,8 @@
     // Reset the puzzle
     function resetPuzzle() {
       document.getElementById("message").style.display = "none";
+      document.getElementById("message2").style.display = "none";
+      
       document.getElementById("image-container").style.display = "none";
       document.getElementById("puzzle-container").style.display = "grid";
       document.getElementById("title").style.display = "block";
