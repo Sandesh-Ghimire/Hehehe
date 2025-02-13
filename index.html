@@ -13,6 +13,7 @@
       height: 100vh;
       background-color: #FFC0CB;
       font-family: Arial, sans-serif;
+      position: relative; /* Add position relative for pseudo-elements */
     }
 
     h1 {
@@ -53,20 +54,23 @@
       font-weight: bold;
       display: none;
     }
-   #message2 {
+
+    #message2 {
       margin-top: 10px;
       font-size: 18px;
       color: #ff3333;
       font-weight: bold;
       display: none;
     }
-      #message3 {
+
+    #message3 {
       margin-top: 8px;
       font-size: 18px;
       color: #ff3333;
       font-weight: bold;
       display: none;
     }
+
     #solve-button, #try-again-button {
       margin-top: 20px;
       padding: 10px 20px;
@@ -88,62 +92,28 @@
       border-radius: 15px;
     }
 
-    #solve-button
-    {
-/*       display: none; */
+    body::before,
+    body::after {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: url('this.png') no-repeat center/cover;
+      opacity: 0.5;
+      z-index: -1;
     }
 
-      body::before {
-  content: "";
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  width: 150px; /* Decrease the size */
-  height: 150px; /* Decrease the size */
-  background: url('this.png') no-repeat center/cover;
-  transform: rotate(155deg);
-  opacity: 0.5;
-  z-index: -1;
-}
+    body::before {
+      top: 10%;
+      left: 5%;
+      transform: rotate(155deg);
+    }
 
-body::after {
-  content: "";
-  position: absolute;
-  bottom: 15%;
-  right: 10%;
-  width: 150px; /* Decrease the size */
-  height: 150px; /* Decrease the size */
-  background: url('this.png') no-repeat center/cover;
-  transform: rotate(-15deg);
-  opacity: 0.5;
-  z-index: -1;
-}
-
-      body::before {
-  content: "";
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
-  width: 150px; /* Decrease the size */
-  height: 150px; /* Decrease the size */
-  background: url('this.png') no-repeat center/cover;
-  transform: rotate(155deg);
-  opacity: 0.5;
-  z-index: -1;
-}
-
-body::after {
-  content: "";
-  position: absolute;
-  bottom: 15%;
-  right: 10%;
-  width: 150px; /* Decrease the size */
-  height: 150px; /* Decrease the size */
-  background: url('this.png') no-repeat center/cover;
-  transform: rotate(-15deg);
-  opacity: 0.5;
-  z-index: -1;
-}
+    body::after {
+      bottom: 10%;
+      right: 5%;
+      transform: rotate(-15deg);
+    }
 
     @media (max-width: 768px) {
       body {
@@ -166,33 +136,20 @@ body::after {
         width: 275px;
         height: 450px;
       }
-       body::before {
-    width: 70px; /* Even smaller size for mobile */
-    height: 70px;
-    top: 5%; /* Adjust position */
-    left: 5%; /* Adjust position */
-  }
 
-  body::after {
-    width: 70px; /* Smaller size for mobile */
-    height: 70px;
-    top: 5%; /* Adjust position */
-    right: 5%; /* Adjust position */
-  }
-        body::before {
-    width: 70px; /* Even smaller size for mobile */
-    height: 70px;
-    bottom: 5%; /* Adjust position */
-    left: 5%; /* Adjust position */
-  }
+      body::before {
+        width: 70px; /* Even smaller size for mobile */
+        height: 70px;
+        top: 5%; /* Adjust position */
+        left: 5%; /* Adjust position */
+      }
 
-  body::after {
-    width: 70px; /* Smaller size for mobile */
-    height: 70px;
-    bottom: 5%; /* Adjust position */
-    right: 5%; /* Adjust position */
-  }
-}
+      body::after {
+        width: 70px; /* Smaller size for mobile */
+        height: 70px;
+        top: 5%; /* Adjust position */
+        right: 5%; /* Adjust position */
+      }
     }
   </style>
 </head>
@@ -204,7 +161,7 @@ body::after {
   <div id="message2">Happy Valentine's Day Penguin🐧❤️</div>
   
   <button id="solve-button">Solve Puzzle</button>
-<br>
+  <br>
   <!-- Image container to display the uploaded image -->
   <div id="image-container" style="display: none;">
     <img src="logo1.jpeg" alt="Solved Puzzle Image">
