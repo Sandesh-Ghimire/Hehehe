@@ -60,6 +60,13 @@
       font-weight: bold;
       display: none;
     }
+      #message3 {
+      margin-top: 22px;
+      font-size: 18px;
+      color: #ff3333;
+      font-weight: bold;
+      display: none;
+    }
     #solve-button, #try-again-button {
       margin-top: 20px;
       padding: 10px 20px;
@@ -76,8 +83,8 @@
     }
 
     #image-container img {
-      width: 300px;
-      height: 300px;
+      width: 500px;
+      height: 500px;
       border-radius: 15px;
     }
 
@@ -99,8 +106,8 @@
       }
 
       #image-container img {
-        width: 250px;
-        height: 250px;
+        width: 500px;
+        height: 500px;
       }
     }
   </style>
@@ -108,11 +115,12 @@
 <body>
   <h1 id="title">Unlock My Heart ❤️</h1>
   <div id="puzzle-container"></div>
-  <div id="message">Congratulations!<br> You've unlocked my heart! ❤️</div>
+  <div id="message">Congratulations!</div>
+  <div id="message3" >You've unlocked my heart! ❤️</div>
   <div id="message2">Happy Valentine's Day Penguin🐧❤️</div>
   
   <button id="solve-button">Solve Puzzle</button>
-
+<br>
   <!-- Image container to display the uploaded image -->
   <div id="image-container" style="display: none;">
     <img src="logo.jpeg" alt="Solved Puzzle Image">
@@ -185,6 +193,8 @@
       if (isSolved) {
         document.getElementById("message").style.display = "block";
         document.getElementById("message2").style.display = "block";
+        document.getElementById("message3").style.display = "block";
+        
         document.getElementById("image-container").style.display = "block"; // Show image
         document.getElementById("puzzle-container").style.display = "none"; // Hide puzzle
         document.getElementById("title").style.display = "none"; // Hide title
@@ -208,6 +218,7 @@
     function resetPuzzle() {
       document.getElementById("message").style.display = "none";
       document.getElementById("message2").style.display = "none";
+      document.getElementById("message3").style.display = "none";
       
       document.getElementById("image-container").style.display = "none";
       document.getElementById("puzzle-container").style.display = "grid";
