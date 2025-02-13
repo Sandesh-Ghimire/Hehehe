@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine's Puzzle Game</title>
+  <title>Puzzle Game</title>
   <style>
     body {
       display: flex;
@@ -11,7 +11,7 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background-color: #ffe6e6;
+      background-color: #FFC0CB;
       font-family: Arial, sans-serif;
     }
 
@@ -75,15 +75,36 @@
       border-radius: 15px;
     }
 
-    #solve-button {
-  display: none;
-}
+    @media (max-width: 768px) {
+      body {
+        justify-content: flex-start;
+        padding-top: 100px; /* Reduce margin on top for mobile view */
+      }
+
+      #puzzle-container {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+      }
+
+      .puzzle-piece {
+        width: 80px;
+        height: 80px;
+        font-size: 18px;
+      }
+
+      #image-container img {
+        width: 250px;
+        height: 250px;
+      }
+    }
   </style>
 </head>
 <body>
   <h1 id="title">Unlock My Heart ❤️</h1>
   <div id="puzzle-container"></div>
   <div id="message">Congratulations! You've unlocked my heart! ❤️</div>
+  <div id="message">Happy Valentine's Day Penguin🐧❤️</div>
+  
   <button id="solve-button">Solve Puzzle</button>
 
   <!-- Image container to display the uploaded image -->
